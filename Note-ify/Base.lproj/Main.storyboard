@@ -1,24 +1,200 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SO8-EL-f2n">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Compact-Rounded-Regular.otf">
+            <string>SFCompactRounded-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Welcome View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WelcomeViewController" customModule="Note_ify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note-ify" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sy4-Qi-rYw">
+                                <rect key="frame" x="40" y="94" width="334" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="pjn-qr-AYh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DvI-m3-KFF" customClass="CustomButton" customModule="Note_ify" customModuleProvider="target">
+                                <rect key="frame" x="80" y="529" width="254" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="WlI-Xx-ZCX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="20"/>
+                                <state key="normal" title="Donate"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Cn-ky-VDt" customClass="CustomButton" customModule="Note_ify" customModuleProvider="target">
+                                <rect key="frame" x="60" y="762" width="294" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ncB-K6-hg4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="24"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <segue destination="zx0-Kv-NeY" kind="show" id="FhZ-Zg-ypR"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Notes" translatesAutoresizingMaskIntoConstraints="NO" id="iya-sR-Sk9">
+                                <rect key="frame" x="40" y="184" width="334" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="mDv-Tt-P9H"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zdr-et-9Jx">
+                                <rect key="frame" x="40" y="407.5" width="334" height="81.5"/>
+                                <string key="text">We’re a small business and would like to keep making awesome apps for you. If you feel like buying us some coffee, tap on the button bellow :)</string>
+                                <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Zdr-et-9Jx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1fh-ac-Jg9"/>
+                            <constraint firstItem="iya-sR-Sk9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="4M0-JX-6o7"/>
+                            <constraint firstItem="Zdr-et-9Jx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="836-DC-sKo"/>
+                            <constraint firstAttribute="trailing" secondItem="Zdr-et-9Jx" secondAttribute="trailing" constant="40" id="GMh-Ft-zIG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Sy4-Qi-rYw" secondAttribute="trailing" constant="40" id="Kbx-hg-k9j"/>
+                            <constraint firstItem="DvI-m3-KFF" firstAttribute="top" secondItem="Zdr-et-9Jx" secondAttribute="bottom" constant="40" id="be4-55-9D5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7Cn-ky-VDt" secondAttribute="bottom" constant="50" id="fZD-uV-JVv"/>
+                            <constraint firstAttribute="trailing" secondItem="DvI-m3-KFF" secondAttribute="trailing" constant="80" id="gNj-MZ-2bj"/>
+                            <constraint firstItem="DvI-m3-KFF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="80" id="lAO-J2-kBY"/>
+                            <constraint firstItem="iya-sR-Sk9" firstAttribute="top" secondItem="Sy4-Qi-rYw" secondAttribute="bottom" constant="30" id="pDG-V8-uSG"/>
+                            <constraint firstItem="Zdr-et-9Jx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qcc-0w-bNk"/>
+                            <constraint firstItem="7Cn-ky-VDt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="qvL-QY-Ghe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iya-sR-Sk9" secondAttribute="trailing" constant="40" id="s1s-Zw-UhN"/>
+                            <constraint firstItem="Sy4-Qi-rYw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="tXm-tS-csR"/>
+                            <constraint firstItem="Sy4-Qi-rYw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="w3g-Vq-Wts"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7Cn-ky-VDt" secondAttribute="trailing" constant="60" id="wvu-ma-yPW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="IOj-e5-3cw"/>
+                    <connections>
+                        <outlet property="donateButton" destination="DvI-m3-KFF" id="YlG-nh-3uI"/>
+                        <outlet property="mainTitleLabel" destination="Sy4-Qi-rYw" id="evX-NO-m0u"/>
+                        <outlet property="messageLabel" destination="Zdr-et-9Jx" id="b2a-6x-0Ab"/>
+                        <outlet property="notesImageView" destination="iya-sR-Sk9" id="1Wu-sN-ppg"/>
+                        <outlet property="startButton" destination="7Cn-ky-VDt" id="IeE-nX-MCF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="974" y="130"/>
+        </scene>
+        <!--Notes View Controller-->
+        <scene sceneID="ZLR-Wv-bBX">
+            <objects>
+                <viewController storyboardIdentifier="notesMain" id="zx0-Kv-NeY" customClass="NotesViewController" customModule="Note_ify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZKt-Mi-HDR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3e4-xd-yRP" customClass="CustomButton" customModule="Note_ify" customModuleProvider="target">
+                                <rect key="frame" x="315" y="84" width="59" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="kWU-cK-5KU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="24"/>
+                                <state key="normal" title="Help?"/>
+                                <connections>
+                                    <action selector="helpButtonTapped:" destination="zx0-Kv-NeY" eventType="touchUpInside" id="Zwz-nF-UwU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GL8-ac-RaP" customClass="CustomButton" customModule="Note_ify" customModuleProvider="target">
+                                <rect key="frame" x="40" y="84" width="51" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="N0c-Qd-jYb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="24"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="zx0-Kv-NeY" eventType="touchUpInside" id="lZW-tY-wja"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlj-vF-s7s">
+                                <rect key="frame" x="20" y="423" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="O4T-uA-akr"/>
+                                    <constraint firstAttribute="width" constant="50" id="dnT-8Q-Uai"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jal-qj-KfP">
+                                <rect key="frame" x="344" y="423" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="OOK-T5-PbR"/>
+                                    <constraint firstAttribute="height" constant="50" id="qwV-WU-djW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="dlj-vF-s7s" firstAttribute="leading" secondItem="YTS-bT-Rga" secondAttribute="leading" constant="20" id="6xs-lD-GEN"/>
+                            <constraint firstItem="dlj-vF-s7s" firstAttribute="centerY" secondItem="ZKt-Mi-HDR" secondAttribute="centerY" id="BQU-ej-uPi"/>
+                            <constraint firstItem="YTS-bT-Rga" firstAttribute="trailing" secondItem="3e4-xd-yRP" secondAttribute="trailing" constant="40" id="QE8-XR-O7Z"/>
+                            <constraint firstItem="3e4-xd-yRP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="GL8-ac-RaP" secondAttribute="trailing" constant="8" symbolic="YES" id="a90-HX-Z3d"/>
+                            <constraint firstItem="GL8-ac-RaP" firstAttribute="top" secondItem="YTS-bT-Rga" secondAttribute="top" constant="40" id="e0G-vA-Qwy"/>
+                            <constraint firstItem="jal-qj-KfP" firstAttribute="centerY" secondItem="ZKt-Mi-HDR" secondAttribute="centerY" id="fy7-6O-ujl"/>
+                            <constraint firstItem="3e4-xd-yRP" firstAttribute="top" secondItem="YTS-bT-Rga" secondAttribute="top" constant="40" id="hNx-Vv-CwX"/>
+                            <constraint firstItem="YTS-bT-Rga" firstAttribute="trailing" secondItem="jal-qj-KfP" secondAttribute="trailing" constant="20" id="lnd-Sc-N7D"/>
+                            <constraint firstItem="GL8-ac-RaP" firstAttribute="leading" secondItem="YTS-bT-Rga" secondAttribute="leading" constant="40" id="pIA-pt-XSV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YTS-bT-Rga"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Q7m-79-lak"/>
+                    <connections>
+                        <outlet property="backButton" destination="GL8-ac-RaP" id="fTW-yB-hYx"/>
+                        <outlet property="flatsLabel" destination="jal-qj-KfP" id="T1B-Mp-EYs"/>
+                        <outlet property="helpButton" destination="3e4-xd-yRP" id="6d7-GD-unJ"/>
+                        <outlet property="sharpsLabel" destination="dlj-vF-s7s" id="wAU-79-87v"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dp4-03-bCa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1818.840579710145" y="129.91071428571428"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nev-m1-LYk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="SO8-EL-f2n" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EKw-NQ-ECq">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FGs-rd-nvv">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Fm7-wD-fv2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y4Y-Rj-Apu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Notes" width="306" height="158"/>
+    </resources>
 </document>

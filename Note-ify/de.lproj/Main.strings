@@ -1,0 +1,12 @@
+
+/* Class = "UIButton"; normalTitle = "Start"; ObjectID = "7Cn-ky-VDt"; */
+"7Cn-ky-VDt.normalTitle" = "Starten";
+
+/* Class = "UIButton"; normalTitle = "Donate"; ObjectID = "DvI-m3-KFF"; */
+"DvI-m3-KFF.normalTitle" = "Spenden";
+
+/* Class = "UILabel"; text = "Note-ify"; ObjectID = "Sy4-Qi-rYw"; */
+"Sy4-Qi-rYw.text" = "Note-ify";
+
+/* Class = "UILabel"; text = "We’re a small business and would like to keep making awesome apps for you. If you feel like buying us some coffee, tap on the button bellow :)"; ObjectID = "Zdr-et-9Jx"; */
+"Zdr-et-9Jx.text" = "Wir sind ein kleines Untenehmen und möchten trotzem die beste Apps für dich weiter zu entwickeln! Wenn Du willst kannst du uns gerne einen Tase Kafe kaufen :)";
