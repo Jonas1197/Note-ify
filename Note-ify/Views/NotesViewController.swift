@@ -19,7 +19,6 @@ class NotesViewController: UIViewController {
     @IBOutlet weak var sharpsLabel: UILabel!
     @IBOutlet weak var flatsLabel: UILabel!
 
-    var helpViewCenterYAnchor: NSLayoutConstraint!
     var microphone: AKMicrophone!
     var tracker: AKFrequencyTracker!
     var silence: AKBooster!
@@ -118,20 +117,17 @@ class NotesViewController: UIViewController {
     }
     
     func showHelpMessage() {
-        UIView.animate(withDuration: 1.0, delay: 0.0, options: [.allowUserInteraction, .curveEaseInOut], animations: {
+        UIView.animate(withDuration: 0.3, delay: 0.0, options: [.allowUserInteraction, .curveEaseInOut], animations: {
             self.helpTapped = true
             self.helpView.layer.opacity = 1.0
-            self.helpView.center = self.view.center
-            self.helpViewCenterYAnchor.isActive = true
             self.helpButton.setTitle("Dismiss", for: .normal)
         }, completion: nil)
     }
     
     func hideHelpMessage() {
-        UIView.animate(withDuration: 1.0, delay: 0.0, options: [.allowUserInteraction, .curveEaseInOut], animations: {
+        UIView.animate(withDuration: 0.3, delay: 0.0, options: [.allowUserInteraction, .curveEaseInOut], animations: {
             self.helpTapped = false
             self.helpView.layer.opacity = 0.0
-            self.helpView.center.y = 0
             self.helpButton.setTitle("Help?", for: .normal)
         }, completion: nil)
     }
@@ -149,8 +145,7 @@ extension NotesViewController {
         view.addSubview(helpView)
         
         helpView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        helpViewCenterYAnchor = helpView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-        helpViewCenterYAnchor.isActive = true
+        helpView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         helpView.widthAnchor.constraint(equalToConstant: 200).isActive          = true
         helpView.heightAnchor.constraint(equalToConstant: 300).isActive         = true
         
@@ -169,9 +164,8 @@ extension NotesViewController {
         helpMessageLabel.leftAnchor.constraint(equalTo: helpView.leftAnchor, constant: 10).isActive    = true
         helpMessageLabel.rightAnchor.constraint(equalTo: helpView.rightAnchor, constant: -10).isActive = true
         
-        helpViewCenterYAnchor.isActive = false
         helpView.layer.opacity = 0.0
-        helpView.center.y = 0
+        helpView.center.y = view.center.y
     }
     
     func requestMicrophonePremission() {
@@ -327,7 +321,5 @@ extension NotesViewController {
             noteImageView.heightAnchor.constraint(equalToConstant: 120).isActive = true
             noteImageView.image = UIImage(named: NotesWithFlats.A.rawValue)
         }
-        
-        
     }
 }
